@@ -1,5 +1,8 @@
 <template>
   <div>
-    <h1>Post Detail page</h1>
+    <h1>
+      This is an id: {{this.$route.params.id}}
+      Post Detail page
+    </h1>
   </div>
 </template>

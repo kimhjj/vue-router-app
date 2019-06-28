@@ -29,7 +29,7 @@ export default new Router({
       name: 'posts',
       children: [
         { path: 'new', component: PostNew },
-        { path: 'detail', component: PostDetail }
+        { path: ':id', component: PostDetail }
       ]
     }
   ]
