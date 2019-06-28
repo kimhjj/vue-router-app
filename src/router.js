@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import Home from './views/Home.vue'
+import Posts from './views/Posts.vue'
+import PostNew from './views/PostNew.vue'
+import PostDetail from './views/PostDetail.vue'
 
 Vue.use(Router)
 
@@ -18,6 +22,15 @@ export default new Router({
       name: 'about',
       // 2) lazy-loaded, 요청을 받을 때 import
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    },
+    {
+      path: '/posts',
+      component: Posts,
+      name: 'posts',
+      children: [
+        { path: 'new', component: PostNew },
+        { path: 'detail', component: PostDetail }
+      ]
     }
   ]
 })
