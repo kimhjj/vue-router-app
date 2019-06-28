@@ -26,10 +26,9 @@ export default new Router({
     {
       path: '/posts',
       component: Posts,
-      name: 'posts',
       children: [
-        { path: 'new', component: PostNew },
-        { path: ':id', component: PostDetail }
+        { path:'new', component: PostNew },
+        { path:':id', name: 'post', component: PostDetail}
       ]
     }
   ]
